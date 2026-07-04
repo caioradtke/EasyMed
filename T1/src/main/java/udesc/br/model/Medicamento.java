@@ -1,6 +1,7 @@
 package udesc.br.model;
 
 import jakarta.persistence.*;
+import udesc.br.exception.MedicamentoException;
 
 @Entity
 @Table(name = "medicamento")
@@ -29,12 +30,11 @@ public class Medicamento {
     public Medicamento() {
     }
     
-    public boolean adicionarEstoque(double quantidade){
+    public void adicionarEstoque(double quantidade) throws MedicamentoException {
         if (estoque <= 0){
-            return false;
+            throw new MedicamentoException("Quantidade inválida!");
         }
         this.estoque += quantidade;
-        return true;
     }
     public boolean removerEstoque(double quantidade){
         if (estoque < quantidade){

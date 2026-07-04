@@ -44,29 +44,8 @@ public class CadastrarMedicamentoControlador implements ControladorPaineis {
         // pegar informações na tela
         try{
             String nome = visao.getMedicamentoNome();
-            if (nome.isEmpty()) {
-                throw new MedicamentoException("Preencha o nome do medicamento!");
-            }
-
-            double valorCompra;
-            try {
-                valorCompra = Double.parseDouble(visao.getMedicamentoValorCompra());
-            } catch (NumberFormatException e) {
-                throw new MedicamentoException("Formato do valor inválido");
-            }
-            if (valorCompra <=0) {
-                throw new MedicamentoException("Informe um valor de compra positivo!");
-            }
-
-            double estoque;
-            try {
-                estoque = Double.parseDouble(visao.getMedicamentoEstoque());
-            }catch (NumberFormatException e){
-                throw new MedicamentoException("Formato do estoque inválido!");
-            }
-            if (estoque <=0) {
-                throw new MedicamentoException("Informe um estoque positivo!");
-            }
+            double valorCompra = visao.getMedicamentoValorCompra();
+            double estoque = visao.getMedicamentoEstoque();
             Medicamento medicamento = new Medicamento(nome, valorCompra, estoque);
             medicamentoRepositorio.salvarMedicamento(medicamento);
             visao.apresentarMensagem("Medicamento salvo com sucesso!");

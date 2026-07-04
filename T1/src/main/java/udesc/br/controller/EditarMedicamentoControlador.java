@@ -90,18 +90,9 @@ public class EditarMedicamentoControlador implements ControladorPaineis {
 public void atualizarEstoque() {
     try {
         modelo = visao.getMedicamento();
-
-        if(modelo == null){
-            throw new MedicamentoException("Selecione um medicamento!");
-        }
-
         double quantidade = visao.getQuantidade();
+        modelo.adicionarEstoque(quantidade);
 
-        boolean sucesso = modelo.adicionarEstoque(quantidade);
-
-        if (!sucesso) {
-            throw new MedicamentoException("Quantidade inválida!");
-        }
         medRepositorio.salvarMedicamento(modelo);
         Despesa despesa = gerarDespesa(modelo, quantidade);
         despesaRepositorio.salvarMovimentacaoFinanceira(despesa);

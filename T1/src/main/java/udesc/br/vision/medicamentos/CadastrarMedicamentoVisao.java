@@ -25,16 +25,55 @@ public class CadastrarMedicamentoVisao extends javax.swing.JPanel {
         btnSalvar.addActionListener(acao);
     }
 
-    public String getMedicamentoNome() {
-        return txtNome.getText().trim();
+    public String getMedicamentoNome() throws MedicamentoException{
+        String nome = txtNome.getText();
+        if (nome.isEmpty()) {
+            throw new MedicamentoException("Preencha o nome do medicamento!");
+        }
+        return nome;
     }
 
-    public String getMedicamentoValorCompra() {
-        return txtValorCompra.getText().trim();
+    public double getMedicamentoValorCompra()throws  MedicamentoException{
+        String valorString =
+                txtValorCompra.getText().trim();
+
+        if (valorString.isEmpty()) {
+            throw new MedicamentoException(
+                    "Preencha o valor do medicamento");
+        }
+        double valorCompra;
+        try {
+            valorCompra = Double.parseDouble(valorString);
+        } catch (NumberFormatException ex) {
+            throw new MedicamentoException(
+                    "Formato do valor inválido");
+        }
+        if (valorCompra <= 0){
+            throw new MedicamentoException(
+                    "Informe um valor de compra positivo!");
+        }
+        return valorCompra;
     }
 
-    public String getMedicamentoEstoque() {
-        return txtEstoque.getText().trim();
+    public double getMedicamentoEstoque() throws MedicamentoException{
+        String estoqueString =
+                txtEstoque.getText().trim();
+
+        if (estoqueString.isEmpty()) {
+            throw new MedicamentoException(
+                    "Preencha o estoque do medicamento");
+        }
+        double estoque;
+        try {
+            estoque = Double.parseDouble(estoqueString);
+        } catch (NumberFormatException ex) {
+            throw new MedicamentoException(
+                    "Formato do estoque inválido");
+        }
+        if  (estoque < 0){
+            throw new MedicamentoException("Informe um estoque positivo!");
+        }
+        return estoque;
     }
     public void apresentarMensagem(String msg){
         JOptionPane.showMessageDialog(this.getParent(), msg);
