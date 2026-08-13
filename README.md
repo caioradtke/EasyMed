@@ -1,14 +1,14 @@
-<img src="images/easyMed.png" width="250" style="margin-left: -15px">
+<img src="Images/easyMed.png" width="350">
 
-<div style=" height:35px; display: flex; flex-direction: row; gap: 10px; align-items: center;">
-  <h2 style="width: 100%; border-bottom: none">Sistema de Gestão de Clínicas</h2>
- 
-  <img alt="Java" src="https://img.shields.io/badge/Java-orange?style=flat&logo=openjdk&  logoColor=white">
+<br>
+
+<div>
+  <img alt="Java" src="https://img.shields.io/badge/Java-orange?style=flat&logo=openjdk&logoColor=white">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg">
   <img alt="Status" src="https://img.shields.io/badge/Status-Concluído-success">
 </div>
 
-<br>
+<h2 border-bottom: none">Sistema de Gestão de Clínicas</h2>
 
 O **EasyMed** é uma aplicação desktop desenvolvida para otimizar e simplificar a rotina administrativa e médica de clínicas e consultórios. Com uma interface limpa e intuitiva, o sistema centraliza o gerenciamento de pacientes, controle de estoque de medicamentos, agendamento de consultas e gestão financeira em um único ambiente.
 
@@ -44,17 +44,17 @@ O sistema foi modularizado para atender as principais demandas de uma clínica.
 
 | Tela Inicial | Cadastro de Pacientes |
 |:---:|:---:|
-| <img src="images/Home.png" width="500"> | <img src="images/Pacientes.png" width="500"> |
+| <img src="Images/Home.png" width="500"> | <img src="Images/Pacientes.png" width="500"> |
 
 
 
 | Estoque de Medicamentos | Agenda |
 |:---:|:---:|
-| <img src="images/Medicamentos.png" width="500"> | <img src="images/Agenda.png" width="500"> |
+| <img src="Images/Medicamentos.png" width="500"> | <img src="Images/Agenda.png" width="500"> |
 
 | Consultas | Financeiro |
 |:---:|:---:|
-| <img src="images/Consulta.png" width="500"> | <img src="images/Financeiro.png" width="500"> |
+| <img src="Images/Consulta.png" width="500"> | <img src="Images/Financeiro.png" width="500"> |
 
 
 
@@ -67,8 +67,7 @@ O projeto foi inteiramente construído com foco em performance local e usabilida
 * **Interface Gráfica:** Swing
 * **ORM:** JPA (Java Persistence API)
 * **Banco de Dados:** Postgres ou SQLite
-<br>
----
-<br>
 
-Este software foi desenvolvido como trabalho final de Desenvolvimento Orientado a Objetos II,desenvolvido pelos alunos: André Salvalaggio, Caio Radtke, João Cardoso
+---
+
+Este software foi desenvolvido como trabalho final de Desenvolvimento Orientado a Objetos II, desenvolvido pelos alunos: André Salvalaggio, Caio Radtke, João Cardoso
